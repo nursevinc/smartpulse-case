@@ -1,0 +1,10 @@
+﻿.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.db
+tgt_cache.txt
+rapor.csv
