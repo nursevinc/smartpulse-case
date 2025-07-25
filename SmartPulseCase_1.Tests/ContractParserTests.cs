@@ -1,7 +1,6 @@
 using System;
 using Xunit;
 using SmartPulseCase_1;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using SmartPulseCase1;
 
 namespace SmartPulseCase_1.Tests

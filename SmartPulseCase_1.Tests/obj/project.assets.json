@@ -421,19 +421,6 @@
         "build": {
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
-      },
-      "SmartPulseCase1/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "xunit": "2.9.3"
-        },
-        "compile": {
-          "bin/placeholder/SmartPulseCase1.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/SmartPulseCase1.dll": {}
-        }
       }
     }
   },
@@ -956,17 +943,12 @@
         "xunit.runner.visualstudio.2.5.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
-    },
-    "SmartPulseCase1/1.0.0": {
-      "type": "project",
-      "path": "../SmartPulseCase1/SmartPulseCase1.csproj",
-      "msbuildProject": "../SmartPulseCase1/SmartPulseCase1.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1\\SmartPulseCase1.csproj",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
-      "SmartPulseCase1 >= 1.0.0",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.9.3",
       "xunit.runner.visualstudio >= 2.5.3"
@@ -979,11 +961,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase_1.Tests\\SmartPulseCase_1.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase_1.Tests\\SmartPulseCase_1.Tests.csproj",
       "projectName": "SmartPulseCase_1.Tests",
-      "projectPath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase_1.Tests\\SmartPulseCase_1.Tests.csproj",
+      "projectPath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase_1.Tests\\SmartPulseCase_1.Tests.csproj",
       "packagesPath": "C:\\Users\\NUR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase_1.Tests\\obj\\",
+      "outputPath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase_1.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1004,8 +986,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1.csproj": {
-              "projectPath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1.csproj"
+            "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1\\SmartPulseCase1.csproj": {
+              "projectPath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1\\SmartPulseCase1.csproj"
             }
           }
         }
@@ -1020,7 +1002,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -1059,8 +1041,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "'C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1\\SmartPulseCase1.csproj' projesi bulunamadı. Proje başvurusunun geçerli olup olmadığını ve proje dosyasının mevcut olup olmadığını denetleyin.",
+      "libraryId": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1\\SmartPulseCase1.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

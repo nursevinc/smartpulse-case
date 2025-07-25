@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iepydN2tGZY=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase_1.Tests\\SmartPulseCase_1.Tests.csproj",
+  "dgSpecHash": "pwwdZm9Gq8g=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase_1.Tests\\SmartPulseCase_1.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NUR\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\NUR\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
@@ -21,5 +21,17 @@
     "C:\\Users\\NUR\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512",
     "C:\\Users\\NUR\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.3\\xunit.runner.visualstudio.2.5.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "'C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1\\SmartPulseCase1.csproj' projesi bulunamadı. Proje başvurusunun geçerli olup olmadığını ve proje dosyasının mevcut olup olmadığını denetleyin.",
+      "projectPath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase_1.Tests\\SmartPulseCase_1.Tests.csproj",
+      "filePath": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase_1.Tests\\SmartPulseCase_1.Tests.csproj",
+      "libraryId": "C:\\Users\\NUR\\source\\repos\\SmartPulseCase1\\SmartPulseCase1\\SmartPulseCase1.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

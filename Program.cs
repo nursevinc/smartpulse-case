@@ -18,7 +18,14 @@ namespace SmartPulseCase
             {
                 Console.WriteLine("SmartPulse Case'e hoş geldiniz!");
 
-                string tgt = await GetTgtAsync("nursevinc90@gmail.com", "Nrsvnc90.");
+                Console.Write("EPİAŞ Kullanıcı Adı: ");
+                string username = Console.ReadLine();
+
+                Console.Write("EPİAŞ Şifre: ");
+                string password = Console.ReadLine();
+
+                string tgt = await GetTgtAsync(username, password);
+
                 string jsonData = await GetTransactionDataAsync(tgt);
 
                 var options = new JsonSerializerOptions
@@ -98,29 +105,42 @@ namespace SmartPulseCase
         static async Task<string> GetTgtAsync(string username, string password)
         {
             string cacheFile = "tgt_cache.txt";
-            // 1.cache kontrolü
+
+            // 1. CACHE VAR MI?
             if (File.Exists(cacheFile))
             {
                 var lines = File.ReadAllLines(cacheFile);
-                if (lines.Length == 2 &&
+                if (lines.Length == 3 && lines[2] == username &&
                     DateTime.TryParse(lines[0], out DateTime cachedTime) &&
                     DateTime.Now - cachedTime < TimeSpan.FromHours(2))
                 {
-                    // 2 saat geçmemişse cache’teki TGT’yi kullan
                     Console.WriteLine("TGT cache'ten alındı.");
                     return lines[1];
                 }
+                else
+                {
+                    // Farklı kullanıcıysa veya süresi geçtiyse eski cache’i sil
+                    File.Delete(cacheFile);
+                    Console.WriteLine("Cache geçersiz, silindi.");
+                }
             }
 
-            //login
+            // 2. YENİDEN LOGIN
             var client = new HttpClient();
             var content = new FormUrlEncodedContent(new[]
             {
-                new KeyValuePair<string, string>("username", username),
-                new KeyValuePair<string, string>("password", password)
-            });
+        new KeyValuePair<string, string>("username", username),
+        new KeyValuePair<string, string>("password", password)
+    });
 
             var response = await client.PostAsync("https://giris.epias.com.tr/cas/v1/tickets", content);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("TGT alınamadı. Hatalı kullanıcı adı veya şifre.");
+                return null;
+            }
+
             var html = await response.Content.ReadAsStringAsync();
 
             var tgtLine = html.Split('\n')[0];
@@ -128,16 +148,18 @@ namespace SmartPulseCase
             var end = tgtLine.IndexOf("\"", start);
             var tgt = tgtLine.Substring(start, end - start);
 
-            //cache yazma
+            // 3. CACHE’E YAZ (Tarih, TGT, Kullanıcı adı)
             File.WriteAllLines(cacheFile, new[]
             {
-                DateTime.Now.ToString("s"),
-                tgt
-            });
+        DateTime.Now.ToString("s"),
+        tgt,
+        username
+    });
 
             Console.WriteLine("Yeni TGT alındı ve cache’lendi.");
             return tgt;
         }
+
 
         static async Task<string> GetTransactionDataAsync(string tgt)
         {
